@@ -19,29 +19,24 @@ CAFFE_DIR=/*path-to-caffe-root*/ luarocks make
 ```
 Then SSD and DetectNet can be easily evaluated under Torch7 environment.
 
-How to evaluate:
+**How to evaluate:**
 
 1. Download `TAD16K` and our `pretrained models` at https://github.com/lymhust/caffe_torch_binding. 
 2. Run `test_totxt.lua` to generate evaluation results of DetectNet and SSD.
 3. Run `drawPRCurve_all.lua` to generate PR curve for each method.
 4. Run `drawPRCurve_twoMethods.lua` to generate PR curve of two methods in one coordinate.
 
-```lua
-Net:forward(input)
-Net:updateGradInput(input, gradOutput)
-Net:getBlobIndx(query_blob_name)
-Net:getBlobData(blob_id)
-Net:readMean(mean_file_path)
-Net:reshape(bnum, cnum, h, w)
-Net:saveModel(weights_file)
-Net:initGPUMemoryScope()
-Net:reset()
-Net:setModeCPU()
-Net:setModeGPU()
-Net:setDevice(device_id)
-```
+**Useful functions:**
 
-Examples:
+`test_basler.lua`:      test two methods using Basler industrial camera.
+`test_imgs.lua`:        test two methods using images stored in one folder.
+`test_webcamera.lua`:   test two methods using web camera.
+`json2txt.lua`:         parse the json file provided by TAD16K and save it as txt format.
+`detectnet.lua`:        parse the caffe model of DetectNet.
+`ssd.lua`:              parse the caffe model of SSD.
+`nms.lua`:              non maximum suppression.
+
+**Examples:**
 ```lua
 require 'caffe'
 
