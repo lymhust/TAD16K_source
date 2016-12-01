@@ -56,13 +56,13 @@ end
 camera = image.Camera{idx=0, width=im_w, height=im_h, fps=30}
 
 while (true) do
-	local start = sys.clock()
-	frame = camera:forward()
-	frame = image.scale(frame, im_w, im_h, 'simple')
-	frame, result = process_one(frame[{{},{topend,bottomend},{}}])
+  local start = sys.clock()
+  frame = camera:forward()
+  frame = image.scale(frame, im_w, im_h, 'simple')
+  frame, result = process_one(frame[{{},{topend,bottomend},{}}])
   win = image.display{win=win, image=frame}
   local time = sys.clock() - start
   print("FPS: ".. 1/time)
-	print("Time: "..(time*1000)..'ms\n')
+  print("Time: "..(time*1000)..'ms\n')
 end
 ```
