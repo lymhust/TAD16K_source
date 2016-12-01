@@ -1,22 +1,24 @@
 TAD16K: An enhanced dataset for autonomous driving (Source Code)
 ===================
 
-Here is the source code of our paper ***TAD16K: An enhanced dataset for autonomous driving***
+Here is the source code of our paper ***TAD16K: An enhanced dataset for autonomous driving***.
 
 We provide the evaluation results of two state-of-the-art object detection algorithms (SSD and DetectNet) on our dataset TAD16K, which can be used as the baseline for future comparison purpose. 
 
-***SSD*** can be obtained at https://github.com/weiliu89/caffe/tree/ssd
+***SSD*** can be obtained at https://github.com/weiliu89/caffe/tree/ssd.
 
-***DetectNet*** can be obtained at https://github.com/NVIDIA/DIGITS/tree/master/examples/object-detection
+***DetectNet*** can be obtained at https://github.com/NVIDIA/DIGITS/tree/master/examples/object-detection.
 
 We bind Caffe as a module in Torch7 and maintain an updated torch-caffe-binding source code at:
-https://github.com/lymhust/caffe_torch_binding
+https://github.com/lymhust/caffe_torch_binding.
 
 You have to have installed and built Caffe, then do this:
 
 ```bash
 CAFFE_DIR=/*path-to-caffe-root*/ luarocks make
 ```
+Then SSD and DetectNet can be easily evaluated under Torch7 environment.
+
 
 Supported functions:
 ```lua
