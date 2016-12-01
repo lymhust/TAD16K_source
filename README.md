@@ -28,13 +28,13 @@ Then SSD and DetectNet can be easily evaluated under Torch7 environment.
 
 **Useful functions:**
 
-`test_basler.lua`:      test two methods using Basler industrial camera.
-`test_imgs.lua`:        test two methods using images stored in one folder.
-`test_webcamera.lua`:   test two methods using web camera.
-`json2txt.lua`:         parse the json file provided by TAD16K and save it as txt format.
-`detectnet.lua`:        parse the caffe model of DetectNet.
-`ssd.lua`:              parse the caffe model of SSD.
-`nms.lua`:              non maximum suppression.
+* `test_basler.lua`:      test two methods using Basler industrial camera.
+* `test_imgs.lua`:        test two methods using images stored in one folder.
+* `test_webcamera.lua`:   test two methods using web camera.
+* `json2txt.lua`:         parse the json file provided by TAD16K and save it as txt format.
+* `detectnet.lua`:        parse the caffe model of DetectNet.
+* `ssd.lua`:              parse the caffe model of SSD.
+* `nms.lua`:              non maximum suppression.
 
 **Examples:**
 ```lua
