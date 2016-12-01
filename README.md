@@ -38,22 +38,31 @@ Then SSD and DetectNet can be easily evaluated under Torch7 environment.
 
 **Examples:**
 ```lua
-require 'caffe'
+require 'camera'
+-- Types:  light, vehicle, pedestrian and sign
+pretype = 'sign'
+-- Methods: DetectNet and SSD
+local method = 'DetectNet'
 
-net = caffe.Net('deploy.prototxt', 'bvlc_alexnet.caffemodel', 'test')
-input = torch.FloatTensor(10,3,227,227)
-output = net:forward(input)
+if (method == 'DetectNet') then
+	dofile('detectnet.lua')
+elseif (method == 'SSD') then
+	dofile('ssd.lua')
+else
+	print('Unknow method!')
+end
 
-gradOutput = torch.FloatTensor(10,1000,1,1)
-gradInput = net:backward(input, gradOutput)
-```
+-- Testing using web camera
+camera = image.Camera{idx=0, width=im_w, height=im_h, fps=30}
 
-User can also use it inside a network as nn.Module, for example:
-
-```lua
-require 'caffe'
-
-model = nn.Sequential()
-model:add(caffe.Net('deploy.prototxt', 'bvlc_alexnet.caffemodel', 'test'))
-model:add(nn.Linear(1000,1))
+while (true) do
+	local start = sys.clock()
+	frame = camera:forward()
+	frame = image.scale(frame, im_w, im_h, 'simple')
+	frame, result = process_one(frame[{{},{topend,bottomend},{}}])
+  win = image.display{win=win, image=frame}
+  local time = sys.clock() - start
+  print("FPS: ".. 1/time)
+	print("Time: "..(time*1000)..'ms\n')
+end
 ```
