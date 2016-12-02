@@ -67,6 +67,10 @@ while (true) do
 end
 ```
 
-** Results:**
 
-|[![](/result_images/sign.png)]|[![](/result_images/car.png)]|[![](/result_images/light.png)]|[![](/result_images/ped.png)]|
+**DetectNet results on PointGrey frames:**
+
+![](/result_images/sign.png)
+![](/result_images/car.png)
+![](/result_images/light.png)
+![](/result_images/ped.png)
