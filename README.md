@@ -71,7 +71,7 @@ end
 **DetectNet results on PointGrey frames:**
 
 
-![](/result_images/sign.png)
-![](/result_images/car.png)
-![](/result_images/light.png)
-![](/result_images/ped.png)
+![](/result_imgs/sign.png)
+![](/result_imgs/car.png)
+![](/result_imgs/light.png)
+![](/result_imgs/ped.png)
