@@ -66,3 +66,7 @@ while (true) do
   print("Time: "..(time*1000)..'ms\n')
 end
 ```
+
+** Results:**
+
+|[![](/result_images/sign.png)]|[![](/result_images/car.png)]|[![](/result_images/light.png)]|[![](/result_images/ped.png)]|
