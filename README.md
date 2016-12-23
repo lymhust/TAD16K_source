@@ -25,7 +25,7 @@ Then SSD and DetectNet can be easily evaluated under Torch7 environment.
 2. Run `test_totxt.lua` to generate evaluation results of DetectNet and SSD.
 3. Run `drawPRCurve_all.lua` to generate PR curve for each method.
 4. Run `drawPRCurve_twoMethods.lua` to generate PR curve of two methods in one coordinate.
-* Before running, please goto 'utils/evaluate' and build source: 
+* Before running, please goto 'utils/evaluate' and build the source: 
 
 ```bash
 mkdir build
