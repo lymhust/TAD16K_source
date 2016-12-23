@@ -21,12 +21,12 @@ while (bs:isGrabbing()) do
 	local start = sys.clock()
 	local frame = bs:retrieveResult()
 	frame = frame:permute(3,1,2)
-	--frame = image.scale(frame, im_w, im_h, 'simple')
-	--frame, result = process_one(frame[{{},{topend,bottomend},{}}], file)
+	frame = image.scale(frame, im_w, im_h, 'simple')
+	frame, result = process_one(frame[{{},{topend,bottomend},{}}], file)
     win = image.display{win=win, image=frame:index(1,torch.LongTensor{3, 2, 1})}
     local time = sys.clock() - start
-    --print("FPS: ".. 1/time)
-	--print("Time: "..(time*1000)..'ms\n')
+    print("FPS: ".. 1/time)
+	print("Time: "..(time*1000)..'ms\n')
 end
 
 
