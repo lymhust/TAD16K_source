@@ -1,1 +1,10 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6 FATAL_ERROR)
+CMAKE_POLICY(VERSION 2.6)
 
+INCLUDE_DIRECTORIES("/usr/local/include")
+LINK_DIRECTORIES("/usr/local/lib")
+
+SET(src evaluate.cpp)
+
+ADD_LIBRARY(evaluate SHARED ${src})
+TARGET_LINK_LIBRARIES(evaluate opencv_core)
