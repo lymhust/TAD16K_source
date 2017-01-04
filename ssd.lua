@@ -77,16 +77,16 @@ local caffe_dec_deploy_file = nil
 local caffe_dec_model_file = nil
 
 if (pretype == 'light') then
-	caffe_dec_deploy_file = './models_DetectNet/model_light/deploy.prototxt'
-	caffe_dec_model_file = './models_DetectNet/model_light/weights.caffemodel'
+	caffe_dec_deploy_file = './models_SSD/model_light/deploy.prototxt'
+	caffe_dec_model_file = './models_SSD/model_light/weights.caffemodel'
 	thresh = 20
 elseif (pretype == 'vehicle') then
-	caffe_dec_deploy_file = './models_DetectNet/model_car/deploy.prototxt'
-	caffe_dec_model_file = './models_DetectNet/model_car/weights.caffemodel'
+	caffe_dec_deploy_file = './models_SSD/model_car/deploy.prototxt'
+	caffe_dec_model_file = './models_SSD/model_car/weights.caffemodel'
 	thresh = 50
 elseif (pretype == 'pedestrian') then
-	caffe_dec_deploy_file = './models_DetectNet/model_ped/deploy.prototxt'
-	caffe_dec_model_file = './models_DetectNet/model_ped/weights.caffemodel'
+	caffe_dec_deploy_file = './models_SSD/model_ped/deploy.prototxt'
+	caffe_dec_model_file = './models_SSD/model_ped/weights.caffemodel'
 	thresh = 30
 elseif (pretype == 'sign') then
 	caffe_dec_deploy_file = './models_SSD/model_sign/deploy.prototxt'
