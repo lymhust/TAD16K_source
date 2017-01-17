@@ -21,7 +21,7 @@ Then SSD and DetectNet can be easily evaluated under Torch7 environment.
 
 **How to evaluate:**
 
-1. Download `TAD16K`, `pretrained models` and `results` at https://github.com/lymhust/caffe_torch_binding. 
+1. Download `TAD16K`, `pretrained models` and `results` at http://autopilot.qq.com/ICIP2017/. 
 2. Replace the empty folders (`models_DetectNet`, `models_SSD` and `results`).
 3. Run `test_totxt.lua` to generate evaluation results of DetectNet and SSD.
 4. Run `drawPRCurve_all.lua` to generate PR curve for each method.
