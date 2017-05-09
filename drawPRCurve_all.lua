@@ -4,13 +4,13 @@ torch.setdefaulttensortype('torch.FloatTensor')
 
 -- This script is to generate the PR curve using all the testing results (test_1 to test_7) for one method
 -- Settings
-local method = 'SSD' --DetectNet or SSD
+local method = 'DetectNet' --DetectNet or SSD
 
 -- Please download results from TAD16K website and put it into the same folder with this script
-local result_folder = '/home/lym/mydisk/code/nvidia_demo/detectnet_deploy/results/TT10K/'..method..'/'
+local result_folder = './results/TT10K/'..method..'/'
 
 -- Types:  light, vehicle, pedestrian and sign
-local pretype = 'light'
+local pretype = 'sign'
 ---------------------------------------------------------------------------------------------------------------
 
 

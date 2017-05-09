@@ -9,7 +9,7 @@ torch.setdefaulttensortype('torch.FloatTensor')
 -- Settings
 
 -- Please download results from TAD16K website and put it into the same folder with this script
-local result_folder = '/home/lym/mydisk/code/nvidia_demo/detectnet_deploy/results/TT10K/'
+local result_folder = './results/TT10K/'
 
 -- light, pedestrian, vehicle, sign
 local pretype = 'vehicle'

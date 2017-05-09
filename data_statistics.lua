@@ -1,9 +1,8 @@
 require 'image'
 
--- This script is to generate the data listed in Table 1
 local pretype = 'vehicle'
 local folder_lab = '/media/lym/Work/code/nvidia_demo/detectnet_deploy/results/TT10K/labels_all/'..pretype..'/'
----------------------------------------------------------------------------------------------------------------
+
 
 local totalnum = 0
 local wall, hall = {}, {}

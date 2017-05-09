@@ -4,15 +4,14 @@
 local folders = {'test_1','test_2','test_3','test_4',
                  'test_5','test_6','test_7'}
 -- local folders = {'test_1'} --test one specific folder
-
 -- Types:  light, vehicle, pedestrian and sign
-pretype = 'sign'
-
+pretype = 'light'
 -- Methods: DetectNet and SSD
-local method = 'DetectNet'
-
+local method = 'SSD'
+-- Img size
+im_h, im_w = 1024, 1024
 -- TAD16K test folder
-local testbase = '/media/lym/Work/data/TAD16K/test/'
+local testbase = '/media/ros/leoymli/datasets/detection_datasets/TAD16K_2048/test/'
 ----------------------------------------------------------------------
 
 -- Load model
@@ -23,7 +22,6 @@ elseif (method == 'SSD') then
 else
 	print('Unknow method!')
 end
-
 
 for _, val in pairs(folders) do
 
@@ -42,7 +40,7 @@ for _, val in pairs(folders) do
 		--local start = sys.clock()
 		local frame = image.load(folder_img..file)
 		frame = image.scale(frame, im_w, im_h, 'simple')
-		frame, result = process_one(frame[{{},{topend,bottomend},{}}])
+		frame, result = process_one(frame)
 		file_res:write(file..'\n')
 		file_res:write(#result..'\n')
 		for _, v in pairs(result) do
@@ -109,5 +107,4 @@ for _, val in pairs(folders) do
 	gnuplot.plot({pretype,recall,precision,'-'})
 	--gnuplot.plotflush()
 	--]]
-
 end

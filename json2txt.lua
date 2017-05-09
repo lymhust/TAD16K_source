@@ -1,78 +1,49 @@
 json = require 'json'
 torch.setnumthreads(8)
 
--- Parse the json file provided by TAD16K and save it as txt format.
---[[ 
-	Format:
-	image name 1
-	number of objects
-	left, top, w, h, 1
-	image name 2
-	number of objects
-	left, top, w, h, 1
-	....
+--[[
+local files = {'test_1_label','test_2_label','test_3_label','test_4_label',
+			   'test_5_label','test_6_label','test_7_label'}
 --]]
 
--- Settings
--- Which folder, train, test or other
-local fd = 'train'
+--[[
+local files = {'train_1_label','train_2_label','train_3_label','train_4_label',
+			   'train_5_label','train_6_label','train_7_label','train_8_label',
+			   'train_9_label','train_10_label','train_11_label','train_12_label','train_13_label'}
+--]]
 
--- Address of annotations
-local file_anno = '/media/lym/Work/data/TAD16K/annotations/'..fd..'/'
+---[[
+local files = {'other_1_label','other_2_label','other_3_label','other_4_label',
+			   'other_5_label','other_6_label','other_7_label','other_8_label',
+			   'other_9_label','other_10_label','other_11_label','other_12_label',
+			   'other_13_label', 'other_14_label', 'other_15_label', 'other_16_label'}
+--]]
 
--- Address of results
-local result_addr = '/media/lym/Work/code/nvidia_demo/detectnet_deploy/results/TT10K/labels_all/'
-
--- Types:  light, vehicle, pedestrian and sign
 local type_need = 'sign'
 
--- Filter, extract (width > thresh and height > thresh)
 if (type_need == 'light') then
-    thresh = 20
+    thresh = 0--20
 elseif (type_need == 'vehicle') then
-    thresh = 50
+    thresh = 0--50
 elseif (type_need == 'pedestrian') then
-	thresh = 30
+	thresh = 0--30
 elseif (type_need == 'sign') then
-	thresh = 20
+	thresh = 0--20
 else
 	print('Unknow type!!!')
 end
--------------------------------------------------------------------------------------------------------------
-
-
-local files
-if (fd == 'train') then
-	-- Extract train
-	files = {'train_1_label','train_2_label','train_3_label','train_4_label',
-			 'train_5_label','train_6_label','train_7_label','train_8_label',
-			 'train_9_label','train_10_label','train_11_label','train_12_label','train_13_label'}
-elseif (fd == 'test') then
-	-- Extract test
-	files = {'test_1_label','test_2_label','test_3_label','test_4_label',
-	     	 'test_5_label','test_6_label','test_7_label'}
-elseif (fd == 'other') then
-	-- Extract other
-	files = {'other_1_label','other_2_label','other_3_label','other_4_label',
-			 'other_5_label','other_6_label','other_7_label','other_8_label',
-			 'other_9_label','other_10_label','other_11_label','other_12_label',
-			 'other_13_label', 'other_14_label', 'other_15_label', 'other_16_label'}
-else
-	print('Unknow folder!!!')
-end
----------------------------------------------------------------------------------------------------------------------
-
 
 for _,v in pairs(files) do
 
 	local file_json = v
-	local file_addr = file_anno..file_json..'.json'
+	local file_addr = '/media/lym/Work/data/TT10K_2048/标注结果/other/'..file_json..'.json'
+	local result_addr = '/media/lym/Work/code/nvidia_demo/detectnet_deploy/results/TT10K/labels_all/'
 
 	local txt_file = io.open(result_addr..type_need..'/'..file_json..'_'..type_need..'.txt', 'w')
 	local label = json.load(file_addr)
 	local filename = io.open(result_addr..file_json..'_imagelist'..'.txt', 'w')
-	local im_h_ori, im_w_ori = 2048, 2048 -- Original size
-	local im_h_new, im_w_new = 1024, 1024 -- New size
+	local im_h_ori, im_w_ori = 2048, 2048
+	local im_h_new, im_w_new = 1024, 1024
 
 	for num = 1, #label do
 		local tmp = label[num]
