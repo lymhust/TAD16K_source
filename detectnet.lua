@@ -16,16 +16,16 @@ local thresh_nms = 0.5
 
 -- Model files
 if (pretype == 'light') then
-	caffe_dec_deploy_file = './models_DetectNet/model_light/light_tengfei/deploy.prototxt'
-	caffe_dec_model_file = './models_DetectNet/model_light/light_tengfei/light_epoch42.caffemodel'
+	caffe_dec_deploy_file = './models_DetectNet/model_light/deploy.prototxt'
+	caffe_dec_model_file = './models_DetectNet/model_light/light_epoch42.caffemodel'
     thresh_size = 20
 elseif (pretype == 'vehicle') then
-	caffe_dec_deploy_file = './models_DetectNet/model_car/carnet/deploy.prototxt'
-	caffe_dec_model_file = './models_DetectNet/model_car/carnet/snapshot_iter_239475.caffemodel'
+	caffe_dec_deploy_file = './models_DetectNet/model_car/deploy.prototxt'
+	caffe_dec_model_file = './models_DetectNet/model_car/snapshot_iter_239475.caffemodel'
     thresh_size = 50
 elseif (pretype == 'pedestrian') then
-	caffe_dec_deploy_file = './models_DetectNet/model_ped/pednet/deploy.prototxt'
-	caffe_dec_model_file = './models_DetectNet/model_ped/pednet/snapshot_iter_116676.caffemodel'
+	caffe_dec_deploy_file = './models_DetectNet/model_ped/deploy.prototxt'
+	caffe_dec_model_file = './models_DetectNet/model_ped/snapshot_iter_116676.caffemodel'
 	thresh_size = 30
 elseif (pretype == 'sign') then
 	caffe_dec_deploy_file = './models_DetectNet/model_sign/deploy.prototxt'
