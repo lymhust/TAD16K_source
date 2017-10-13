@@ -1,7 +1,7 @@
 TAD16K: An enhanced benchmark for autonomous driving (Source Code)
 ===================
 
-Here is the source code of our paper ***TAD16K: An enhanced benchmark for autonomous driving***. (http://autopilot.qq.com/ICIP2017/)
+Here is the source code of our paper ***TAD16K: An enhanced benchmark for autonomous driving***. (http://autopilot.qq.com/ICIP2017/)(TAD16K backup link http://url.cn/53k4BPv, password: mXo0Af)
 
 We provide the evaluation results of two state-of-the-art object detection algorithms (SSD and DetectNet) on our benchmark TAD16K, which can be used as the baseline for future comparison purpose. 
 
